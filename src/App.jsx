@@ -7,19 +7,21 @@ function App() {
   const [theme, setTheme] = useState("light")
   useEffect(() => {
     useTheme(theme)
-  },[theme])
+  }, [theme])
   return (
+    <div className='flex flex-col w-[99vw]'>
 
-    <>
-      <div className="flex items-center space-x-2">
-        <button onClick={ ()=> theme === "dark" ? setTheme("white") : setTheme("dark")}>
-          <Switch id="airplane-mode" />
+      <div className="flex items-center">
+        <button onClick={() => theme === "dark" ? setTheme("white") : setTheme("dark")}>
+          <Switch />
         </button>
       </div>
-      <div className='min-h-screen  bg-white dark:bg-black '>
+
+      <div>
         <Signup />
       </div>
-    </>
+
+    </div>
   )
 }
 
@@ -30,4 +32,4 @@ export default App
 
     Shift the Theme changing option to Navbar Component during Creation 
 
-*/ 
+*/
